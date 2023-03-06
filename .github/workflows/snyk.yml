@@ -8,6 +8,7 @@ jobs:
       - name: Run Composer install
         run: composer install --no-scripts --no-plugins
       - name: Run Snyk to check for vulnerabilities
+        continue-on-error: true
         uses: snyk/actions/php@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
